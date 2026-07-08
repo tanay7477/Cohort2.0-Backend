@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(11, 9, 5);
+  font-family: 'Inter', sans-serif;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+/* ---------- FORM ---------- */
+
+.note-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: stretch;
+  background: linear-gradient(160deg, #1a1a19 0%, #141312 100%);
+  border: 1px solid rgba(201, 162, 87, 0.14);
+  border-radius: 0.6rem;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 48px;
+}
+
+.note-form input {
+  flex: 1 1 220px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #f3ead9;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 162, 87, 0.18);
+  border-radius: 0.35rem;
+  padding: 0.8rem 1rem;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.note-form input::placeholder {
+  color: #6e6659;
+}
+
+.note-form input:focus {
+  border-color: rgba(201, 162, 87, 0.55);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.note-form button {
+  flex: 0 0 auto;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  color: #0b0a08;
+  background: linear-gradient(160deg, #e8d3a0, #c9a257);
+  border: none;
+  border-radius: 0.35rem;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.note-form button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 24px -10px rgba(201, 162, 87, 0.45);
+}
+
+.note-form button:active {
+  transform: translateY(1px);
+}
+
+/* ---------- NOTES GRID ---------- */
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.note {
+  position: relative;
+  background: linear-gradient(160deg, #1a1a19 0%, #141312 100%);
+  border: 1px solid rgba(201, 162, 87, 0.14);
+  padding: 1.6rem 1.8rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #c9a257, transparent);
+  opacity: 0.55;
+  transition: opacity 0.35s ease;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 162, 87, 0.35);
+  box-shadow: 0 18px 40px -18px rgba(201, 162, 87, 0.25),
+              0 8px 20px -8px rgba(0, 0, 0, 0.5);
+}
+
+.note:hover::before {
+  opacity: 1;
+}
+
+.note h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: #f3ead9;
+  line-height: 1.25;
+}
+
+.note h1::after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 12px;
+  background: #c9a257;
+  opacity: 0.5;
+  transition: width 0.35s ease, opacity 0.35s ease;
+}
+
+.note:hover h1::after {
+  width: 56px;
+  opacity: 0.9;
+}
+
+.note p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93rem;
+  font-weight: 400;
+  color: #9c9284;
+  line-height: 1.65;
+  margin-top: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .notes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .notes {
+    grid-template-columns: 1fr;
+  }
+
+  .note-form {
+    flex-direction: column;
+  }
+
+  .note-form button {
+    width: 100%;
+  }
+}
+
+/* ---------- DELETE BUTTON ---------- */
+ 
+.note {
+  padding-bottom: 3.2rem; /* room for delete button */
+}
+ 
+.delete-btn {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #b98b7a;
+  background: transparent;
+  border: 1px solid rgba(185, 90, 70, 0.3);
+  border-radius: 0.3rem;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+ 
+.delete-btn:hover {
+  color: #f0a08c;
+  border-color: rgba(224, 120, 100, 0.6);
+  background: rgba(224, 120, 100, 0.08);
+}
+ 
+.delete-btn:active {
+  transform: translateY(1px);
+}
