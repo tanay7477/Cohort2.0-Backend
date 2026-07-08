@@ -28,7 +28,7 @@ const[ notes, setNotes] = useState([
 ])
 
 function fetchNotes(){
-axios.get('https://cohort2-0-backend-day-9.onrender.com//api/notes')
+axios.get('https://cohort2-0-backend-day-9.onrender.com/api/notes')
   .then((res)=>{
   console.log(res.data.note)
   //copy main kuch note hai usse pdho then come here
@@ -48,7 +48,7 @@ useEffect(()=>{
     const{ title, description} =e.target.elements
     console.log(title.value,description.value )
 
-    axios.post('https://cohort2-0-backend-day-9.onrender.com//api/notes',{
+    axios.post('https://cohort2-0-backend-day-9.onrender.com/api/notes',{
        title:title.value ,
      description:description.value
     }
@@ -62,7 +62,7 @@ useEffect(()=>{
   }
 
   function handleDelete(noteId){
-  axios.delete('https://cohort2-0-backend-day-9.onrender.com//api/notes/'+noteId)
+  axios.delete('https://cohort2-0-backend-day-9.onrender.com/api/notes/'+noteId)
     .then( res=>{
       console.log(res.data)
   fetchNotes()
