@@ -80,7 +80,7 @@ useEffect(()=>{
 //imp learning agr tum yahan useEffect use nhi krogwe to tumne jo app function m console.llog res.note.data likha hai
 //tum dekh rhe hoge databse m dataa kewal 6 yah 7 hai to axios bar bar data call kre jaa rha hai means axios bar bar chle jaa rha hai
 //reason of this is that ppehli bar jab app chlaya react ne to axios ne api call kri backend se  data aya useState m dal diya to yaha state chnage hui 
-// jab bhi state chnage hogi react app ko dabar cll kr dega daba data aega backend se wo console pe dobara dikhega 
+// jab bhi state chnage hogi react app ko dobara cll kr dega daba data aega backend se wo console pe dobara dikhega 
 // yhaan useeffect bar bar rerender nhi rokta wo bas api call ko control krta
 //becoz bar bar rerender hona to react ka kam h jab bhi state change hogi tab
   return (
@@ -89,7 +89,7 @@ useEffect(()=>{
          <form className="note-form" onSubmit={handleSubmit}>
         <input type='text' name="title" placeholder="Enter title"/>
        <input type='text' name="description" placeholder="Enter description"/>
-       <button>Create Note</button>
+       <button type='submit'>Create Note</button>
     </form>
 
        { notes.map((note )=>{
