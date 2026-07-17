@@ -10,6 +10,9 @@ const connectToDB = require('../config/database')
 connectToDB()
 
 app.use(express.json())
+
+app.use(express.static(path.join(__dirname, "..", "public")))// yeh line notes router waale middleware se pehle add krna hoti
+
 app.use('/api/notes',notesRouter)
 
 app.use('*name',(req,res)=>{
