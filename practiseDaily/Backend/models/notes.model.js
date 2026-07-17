@@ -4,7 +4,9 @@ const notesSchema = new mongoose.Schema(
     {
         title:{
             type:String,
-            default:"Unknown"
+            default:"Unknown",
+            unique:true,
+            required: [true, "Title is required , mustbe Unused"]
         },
         description:{
             type:String,
