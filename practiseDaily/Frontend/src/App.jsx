@@ -32,7 +32,7 @@ const App = () => {
 async function formhandle(e){
    e.preventDefault()
    const {title , description , priority} = e.target.elements
-   const result = await  axios.post("http://localhost:3000/api/notes/post-data",{
+   const result = await  axios.post("https://cohort2-0-backend-notesproject.onrender.com/api/notes/post-data",{
     title:title.value ,
      description:description.value,
      priority:priority.value
@@ -60,13 +60,13 @@ setSearchNotes(result);
 
 async function fetchData(){
     
-   const result = await  axios.get("http://localhost:3000/api/notes/get-data")
+   const result = await  axios.get("https://cohort2-0-backend-notesproject.onrender.com/api/notes/get-data")
    setNotes(result.data.notes)
    setSearchNotes(result.data.notes)
 }
 
 async function deleteData(noteid){
-    const result = await axios.delete('http://localhost:3000/api/notes/delete-data/'+noteid)
+    const result = await axios.delete('https://cohort2-0-backend-notesproject.onrender.com/api/notes/delete-data/'+noteid)
     fetchData()
     showDelete()
 }
