@@ -1,0 +1,50 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background: #161922;
+  border: 1px solid #2a2e3a;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+.login-form .input-field {
+  background: rgb(15.9892857143, 18.1696428571, 24.7107142857);
+  border: 1px solid #2a2e3a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #eef0f5;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.login-form .input-field::-moz-placeholder {
+  color: rgba(141, 146, 163, 0.6);
+}
+.login-form .input-field::placeholder {
+  color: rgba(141, 146, 163, 0.6);
+}
+.login-form .input-field:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+.login-form .login-btn {
+  padding: 0.8rem;
+  background: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.login-form .login-btn:hover {
+  background: #5b4bd6;
+}
+.login-form .login-btn:active {
+  transform: scale(0.98);
+}/*# sourceMappingURL=form.css.map */
