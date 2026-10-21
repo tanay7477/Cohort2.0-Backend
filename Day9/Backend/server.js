@@ -1,8 +1,8 @@
 //server strt krna 
 //database se connect krna
-
-const app = require("./src/app");
 require('dotenv').config();
+const app = require("./src/app");
+
 
 const connectToDB = require("./src/config/database");
 

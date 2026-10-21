@@ -24,7 +24,7 @@ app.use(express.static("./public"))//iss middle ware se backend ki url frontend 
 app.post('/api/notes', async(req, res)=>{
     const {title , description}=req.body;
     const note = await noteModel.create({
-        title : title,
+        title : title, 
         description : description
     })
 

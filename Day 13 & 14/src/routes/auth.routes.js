@@ -100,13 +100,14 @@ authRouter.post("login",async (req,res)=>{
 
 
 })
-
-//proper authentication 
+/** 
+ *!proper authentication 
+*/
 authRouter.get('/get-me',async(req,res)=>{
     const token = req.cookies.token //iski help se token mil jaega hamara
     const decoded = jwt.verify(token,process.env.JWT_SECRET) // tokken jo hai hmare server ka hi jwt verify krte
     // token shi milega to decode main user detail menas id milegi jiske basis pe humne token bnya tha
-    const user =  await userModel.findById(decpded.id)
+    const user =  await userModel.findById(decoded.id)
 
     res.json({
         name:user.name,

@@ -81,6 +81,7 @@ async function registerController(req, res) {
 }
 
 async function loginController(req, res) {
+  console.log("BODY:", req.body);
   const { username, email, password } = req.body;
   const user = await userModel.findOne({
     //* user here can login in two way-
