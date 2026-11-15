@@ -1,0 +1,27 @@
+ button {
+            
+            border-radius: 0.75rem;
+            padding-inline: 1rem;
+            padding-block: 0.5rem;
+            border: none;
+            outline: none;
+            background-color: #c90b0b;
+            color: #ffffff;
+            cursor: pointer;
+            transition: 0.2s;
+
+            //dono class ek hi element ke andr hai to &.primary-button se dono class ke liye styling apply ho jaegi
+            &.primary-button{ 
+                background-color: #c90b0b;
+                color: whitesmoke;
+            }
+
+            &:hover {
+                background-color: darkred;
+            }
+
+            &:active {
+                transform: scale(0.95);
+                background-color: #800000;
+            }
+        }
